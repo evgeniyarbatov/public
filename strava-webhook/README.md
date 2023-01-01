@@ -3,9 +3,7 @@
 Strava activity post-processing in AWS Lambda:
 
 - rename activities
-
 - hide certain activities from home
-
 - save Strava activity info in DynamoDB
 
 ## Setup
