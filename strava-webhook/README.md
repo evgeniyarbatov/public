@@ -11,11 +11,8 @@ Strava activity post-processing in AWS Lambda:
 ## Setup
 
 - Create AWS Lambda with public function URL: [Lambda function URLs](https://docs.aws.amazon.com/lambda/latest/dg/lambda-urls.html)
-
 - Create Strava app and point to AWS Lambda URL: [How to Create Strava App](https://developers.strava.com/docs/getting-started/#account)
-
 - Subscribe webhook for Strava app: [Strava Webhook](https://developers.strava.com/docs/webhooks/)
-
 - Login with the app to authorize getting Strava webhook events for yourself: [Strava Authentication](https://developers.strava.com/docs/authentication/)
 
 ## Config
