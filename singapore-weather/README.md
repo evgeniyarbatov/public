@@ -16,4 +16,4 @@ https://api.data.gov.sg/v1/environment/24-hour-weather-forecast
 
 ## Demo
 
-![SG Weather Demo](images/sg-weather.jpg?raw=true "SG Weather Demo" | height=300)
+<img src="https://github.com/evgeniyarbatov/public/blob/main/singapore-weather/images/sg-weather.jpg" width="400">
