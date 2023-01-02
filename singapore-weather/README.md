@@ -17,3 +17,31 @@ https://api.data.gov.sg/v1/environment/24-hour-weather-forecast
 ## Demo
 
 ![SG Weather Demo](images/sg-weather.jpg?raw=true "SG Weather Demo" | height=300)
+
+
+## Scheduling Lambda with CloudWatch Events
+
+Run every day at 5am SGT:
+
+```
+aws events put-rule \
+--name "SGWeatherUpdate" \
+--schedule-expression "cron(0 21 * * ? *)"
+```
+
+Permission to invoke Lamda from CloudWatch
+
+```
+aws lambda add-permission \
+--function-name sgWeather \
+--statement-id SGWeatherUpdate \
+--action 'lambda:InvokeFunction' \
+--principal events.amazonaws.com \
+--source-arn arn:aws:events:ap-southeast-1:655701728733:rule/SGWeatherUpdate
+```
+
+Schedule
+
+```
+aws events put-targets --rule SGWeatherUpdate --targets file://targets.json
+```
