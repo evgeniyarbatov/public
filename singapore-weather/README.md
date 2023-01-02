@@ -20,4 +20,4 @@ https://api.data.gov.sg/v1/environment/24-hour-weather-forecast
 
 ## Demo
 
-![SG Weather Demo](images/path/to/sg-weather.jpg?raw=true "SG Weather Demo")
+![SG Weather Demo](images/sg-weather.jpg?raw=true "SG Weather Demo")
