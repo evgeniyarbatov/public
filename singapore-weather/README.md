@@ -19,7 +19,7 @@ https://api.data.gov.sg/v1/environment/24-hour-weather-forecast
 <img src="https://github.com/evgeniyarbatov/public/blob/main/singapore-weather/images/sg-weather.jpg" width="400">
 
 
-## Scheduling Lambda with CloudWatch Events
+## Scheduling Lambda with CloudWatch
 
 Run every day at 5am SGT:
 
