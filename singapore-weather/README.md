@@ -1,10 +1,6 @@
 # Weather Forecast
 
-AWS Lambda to query APIs to fetch temperature and weather forecast.
-
-The result is saved as an HTML page and stored in S3 bucket.
-
-HTML from S3 is rendered in the browser with basic website setup.
+AWS Lambda to query APIs to fetch temperature and weather forecast. The result is saved as an HTML page and stored in S3 bucket. HTML from S3 is rendered in the browser with [basic website setup](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html).
 
 
 ## APIs used
@@ -20,4 +16,4 @@ https://api.data.gov.sg/v1/environment/24-hour-weather-forecast
 
 ## Demo
 
-![SG Weather Demo](images/sg-weather.jpg?raw=true "SG Weather Demo")
+![SG Weather Demo](images/sg-weather.jpg?raw=true "SG Weather Demo" | height=300)
