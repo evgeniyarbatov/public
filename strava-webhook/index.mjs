@@ -54,6 +54,9 @@ async function storeAccessToken(userId, access_token, refresh_token, expires_at)
 
 async function storeActivity(activityId, activity) {
     console.log(`Stored ${activityId} activity`);
+    
+    activity['segment_efforts'].forEach(segment => segment.id = String(segment.id))
+    
     const params = {
         TableName: process.env.ACTIVITY_DYNAMO_DB,
         Item: {
@@ -101,7 +104,7 @@ export const handler = async(event) => {
     const method = event.requestContext.http.method;
     const path = event.requestContext.http.path;
 
-    console.log(`Received ${method} with event ${event}`);
+    console.log(`Received ${method} with event ${JSON.stringify(event)}`);
 
     switch (method) {
         case "GET":
@@ -159,10 +162,7 @@ export const handler = async(event) => {
                         path, 
                         headers,
                     );
-                    await storeActivity(
-                        body.object_id,
-                        activity,
-                    )
+
                     
                     if (activity.sport_type != 'Run') {
                         await makeRequest(
@@ -179,6 +179,11 @@ export const handler = async(event) => {
                             headers,
                         );                        
                     }
+                    
+                    await storeActivity(
+                        body.object_id,
+                        activity,
+                    )
 
                     return {
                         statusCode: 200,

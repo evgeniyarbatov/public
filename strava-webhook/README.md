@@ -23,3 +23,14 @@ Lambda function requires these enviroment variables:
 - STRAVA_CLIENT_ID - your Strava client ID
 - STRAVA_CLIENT_SECRET - your Strava client secret
 - STRAVA_VERIFY_TOKEN - your Strava verify token
+
+## Testing
+
+Call webhook URL with activity ID:
+
+```
+curl -X POST \
+-H 'Content-Type: application/json' \
+-d '{"object_id": 8366231264, "owner_id": 43239612}' \
+WEBHOOK_URL/webhook
+```
