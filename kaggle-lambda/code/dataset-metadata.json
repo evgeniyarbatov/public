@@ -1,0 +1,67 @@
+{
+  "title": "running-times",
+  "id": "evgenyarbatov/running-times",
+  "subtitle": "Latest running times",
+  "description": "Running times scrapped from https://www.alltime-athletics.com/index.html",
+  "keywords": ["Running"],
+  "resources": [
+    {
+      "path": "data.csv",
+      "description": "Running times",
+      "schema": {
+        "fields": [
+          {
+            "name": "Rank",
+            "description": "Overall rank",
+            "type": "string"
+          },
+          {
+            "name": "Time",
+            "description": "Duration of the run",
+            "type": "string"
+          },
+          {
+            "name": "Name",
+            "description": "Athlete name",
+            "type": "string"
+          },
+          {
+            "name": "Country",
+            "description": "Country code",
+            "type": "string"
+          },
+          {
+            "name": "Date of Birth",
+            "description": "Athlete date of Birth",
+            "type": "string"
+          },
+          {
+            "name": "City",
+            "description": "City where marathon was held",
+            "type": "string"
+          },
+          {
+            "name": "Date",
+            "description": "Date of marathon",
+            "type": "string"
+          },
+          {
+            "name": "Gender",
+            "description": "Gender",
+            "type": "string"
+          },
+          {
+            "name": "Event type",
+            "description": "Event type",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "licenses": [
+    {
+      "name": "CC0-1.0"
+    }
+  ]
+}
