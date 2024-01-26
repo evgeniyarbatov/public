@@ -19,9 +19,9 @@ aws lambda publish-layer-version --layer-name kaggle --description "Kaggle" --zi
 Update username and password with your own from [here](https://www.kaggle.com/docs/api)
 
 ```
-KAGGLE_CONFIG_DIR	  /tmp/
-KAGGLE_KEY	        <YOUR-KEY-HERE>
-KAGGLE_USERNAME	    <YOUR-USERNAME-HERE>
+KAGGLE_CONFIG_DIR /tmp/
+KAGGLE_KEY        <YOUR-KEY-HERE>
+KAGGLE_USERNAME   <YOUR-USERNAME-HERE>
 ```
 
 ## Create AWS Lambda function
