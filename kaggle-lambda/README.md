@@ -4,9 +4,7 @@ Follow these steps to automate updating Kaggle datasets.
 
 ## Create additional AWS Lambda layers
 
-Install Kaggle and any other Python packages you may need. 
-
-Then use AWS CLI to create Lambda function layer.
+Install Kaggle and any other Python packages you may need. Then use AWS CLI to create Lambda function layer.
 
 ```
 rm -rf python/
@@ -18,10 +16,12 @@ aws lambda publish-layer-version --layer-name kaggle --description "Kaggle" --zi
 
 ## Store Kaggle params as environment variables in AWS Lambda
 
+Update username and password with your own from [here](https://www.kaggle.com/docs/api)
+
 ```
-KAGGLE_CONFIG_DIR	/tmp/
+KAGGLE_CONFIG_DIR	  /tmp/
 KAGGLE_KEY	        <YOUR-KEY-HERE>
-KAGGLE_USERNAME	        <YOUR-USERNAME-HERE>
+KAGGLE_USERNAME	    <YOUR-USERNAME-HERE>
 ```
 
 ## Create AWS Lambda function
