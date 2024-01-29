@@ -2,6 +2,15 @@
 
 Follow these steps to automate updating Kaggle datasets.
 
+## Create Kaggle dataset with CLI
+
+Create the first version of a dataset manually:
+
+```
+kaggle datasets init -p data
+kaggle datasets create -p data
+```
+
 ## Create additional AWS Lambda layers
 
 Install Kaggle and any other Python packages you may need. Then use AWS CLI to create Lambda function layer.
