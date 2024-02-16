@@ -34,3 +34,6 @@ Set the rule to trigger Lambda based on your preferred schedule
 
 I am editing code directly in Lambda UI. To sync changes:
 
+```
+aws lambda get-function --function-name monitorWebsiteChanges --query 'Code.Location' | xargs wget -qO- | bsdtar -xvf-
+```
