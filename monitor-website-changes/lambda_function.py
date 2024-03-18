@@ -3,27 +3,42 @@ import time
 import hashlib
 import boto3
 import os
+import re
 
 from bs4 import BeautifulSoup
+from bs4.element import Comment
 
 from urllib.request import urlopen, Request
 from urllib.parse import urlparse
 
 from botocore.exceptions import ClientError
 
+def tag_visible(element):
+    if element.parent.name in ['style', 'script', 'head', 'title', 'meta', '[document]']:
+        return False
+    if isinstance(element, Comment):
+        return False
+    if re.match(r"[\s\r\n]+", str(element)): 
+        return False
+    return True
+    
+def text_from_html(html):
+    soup = BeautifulSoup(html, 'html.parser')
+    texts = soup.findAll(text=True)
+    visible_texts = filter(tag_visible, texts)  
+    return u" ".join(t.strip() for t in visible_texts)    
+
 def get_body_text(url):
     request = Request(
         url,
         headers={
-            'User-Agent': 'Mozilla/5.0'
-    })
- 
-    soup = BeautifulSoup(
-        urlopen(request),
-        features='html.parser'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0'
+        }
     )
+ 
+    html = urlopen(request)
     
-    body_text = soup.find('body').text.strip()
+    body_text = text_from_html(html)
     body_text = body_text.encode(encoding='UTF-8', errors='strict')
     
     return body_text
