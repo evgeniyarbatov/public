@@ -6,6 +6,4 @@ Use this when you need to host unrelated sites created with different frameworks
 
 ## How to use
 
-Check `setup` on the scripts to do the initial setup and creating the buckets.
-
-Use `update` to update existing S3 sites.
+Check `setup` on the scripts to do the initial setup and creating the buckets. Use `update` to update existing S3 sites.
