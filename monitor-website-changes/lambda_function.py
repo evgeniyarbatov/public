@@ -1,5 +1,4 @@
 import json
-import time
 import hashlib
 import boto3
 import os
